@@ -121,6 +121,10 @@ def crawl_trangvang(nganh_hang, khu_vuc, page_start=1, page_end=10):
 def index():
     return render_template('index.html')
 
+@app.route('/health', methods=['GET'])
+def health():
+    return {'status': 'OK', 'message': 'Application is running'}
+
 @app.route('/crawl', methods=['POST'])
 def crawl():
     nganh_hang = request.form.get('nganh_hang')

@@ -1,11 +1,16 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "api/index.py",
+      "src": "*.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
+    {
+      "src": "/health",
+      "dest": "api/index.py"
+    },
     {
       "src": "/(.*)",
       "dest": "api/index.py"
